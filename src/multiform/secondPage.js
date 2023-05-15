@@ -1,144 +1,76 @@
 import arcade from '../assets/images/icon-arcade.svg'
 import advanced from '../assets/images/icon-advanced.svg'
 import pro from '../assets/images/icon-pro.svg'
-import styled from 'styled-components'
+import { PlanWrapper, PlanOption, TitleCard, PriceText, FreeText, OptionWrapper, SelectText, ToggleWrapper, ToggleBtn, SliderBtn } from './styled/secondPage.styled'
 import { useState } from 'react'
 
-const PlanWrapper = styled.div`
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    column-gap:14px;
-`
-
-const PlanOption = styled.div`
-    border: 1px solid hsl(231,11%,63%);
-    width: 30%;
-    cursor: pointer;
-    border-radius: 12px;
-    padding:16px;
-    &:hover{
-        outline: 1px solid hsl(213,96%,18%);
-    }
-    &:active{
-        background-color: #f0f6ff;
-    }
-    &:focus {
-        outline: 1px solid hsl(243,100%,62%);
-        background-color: #f0f6ff;
-    }
-`
-
-const PriceText = styled.div`
-    padding: 0 0 0 0;
-    color: #9699ab;
-    margin-top:5px;
-    margin-bottom:5px;
-`
-
-const FreeText = styled.p`
-    color: hsl(213, 96%, 18%);
-    padding: 0 0 0 0;
-    font-size: 12Px;
-`
-
-const TitleCard = styled.h3`
-    margin-top: 32px;
-    font-size:16px;
-`
-
-const OptionWrapper = styled.div`
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    background-color: #fafbff;
-    align-items: center;
-    margin-top:30px;
-    border-radius: 5px;
-`
-
-const SelectText = styled.p`
-    padding:16px 20px;
-    font-weight:500;
-    &.select {
-        color: hsl(213, 96%, 18%);
-    }
-`
-
-const ToggleWrapper = styled.label`
-    width: 54px;
-    height: 28px;
-    background-color: #02295a;
-    border-radius: 20px;
-    display: flex;
-    align-items: center;
-    position: relative;
-    display: inline-block;
-`
-
-const ToggleBtn = styled.input`
-    width: 0;
-    height: 0;
-    opacity: 0;
-    &:checked + .sliderBtn:before{
-        transform: translateX(26px);
-    }
-`
-
-const SliderBtn = styled.span`
-    position: absolute;
-    cursor: pointer;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    transition: .4s;
-    border-radius: 34px;
-    &:before {
-        position: absolute;
-        content: "";
-        height: 18px;
-        width: 18px;
-        left: 6px;
-        bottom: 5px;
-        background-color: white;
-        transition: .4s;
-        border-radius: 50%;
-    }
-   
-`
 
 function SecondPage({setStep, step, formValues, setFormValues}) {
 
-    const [priceSelect, setPriceSelect] = useState({price:''})
+    //State permettant de jouer sur l'affichage des données monthly/yearly du bouton toggle 
     const [isChecked, setIsChecked] = useState(false);
 
-    //Permet de changer l'affichage des prix au clic du bouton
+    //State pour stocker les valeurs du plan selectionnées 
+    const [planName, setPlanName] = useState(formValues?.planName);
+    const [price, setPrice] = useState(formValues?.price);
+    const [periode, setPeriode] = useState(formValues?.periode);
+    
+    //
     function handleToggle() {
-        setIsChecked(!isChecked);
-      }
+        setIsChecked(!isChecked); 
 
-    //Permet d'acceder à la page précédente
+        if (isChecked && planName === 'arcade') {
+            setPrice(9)
+            setPeriode('monthly')
+          } else if (!isChecked && planName === 'arcade') {
+            setPrice(90);
+            setPeriode('yearly') 
+        }
+
+        if (isChecked &&  planName === 'advanced') {
+            setPrice(12)
+            setPeriode('monthly')
+          } else if (!isChecked && planName === 'advanced') {
+            setPrice(120);
+            setPeriode('yearly') 
+        }
+
+        if (isChecked && planName === 'pro') {
+            setPrice(15)
+            setPeriode('monthly')
+          } else if (!isChecked && planName === 'pro') {
+            setPrice(150);
+            setPeriode('yearly') 
+        }
+    }
+
+    //Permet d'acceder à la page précédente sans conditions
     function handlePrevious() {
         setStep(step - 1)
     }
 
-    //Permet de recuperer et stocker les données de la selection du tarif 
-    function handleClick(planID){
-        const planElement = document.querySelector(`#${planID}`);
-        const priceElement = planElement.querySelector('.price').textContent;
-
-        setPriceSelect(({...priceSelect, price : parseInt(priceElement.slice(1))}))
+    //Permet de recuperer et stocker les données de la selection du tarif au clic sur le plan
+    function handleClick(planID, priceValue, periodeValue){
+        setPlanName(planID);
+        setPrice(priceValue);
+        setPeriode(periodeValue);  
     }
 
-    //Permet d'acceder à la page suivante selon des conditions
+    //Accède à la plage suivante si un plan est selectionné dans ce cas les informations du plan sont envoyées vers le state Form
+    //retourne une erreur si aucun plan n'est selectionné
     function handleSubmit(){
-        if (priceSelect.price === '') {
+        if (!planName) {
             alert('Please select your plan before submitting')
             return
         }
 
-        setFormValues(({...formValues, priceSelect}))
+        setFormValues(({...formValues, 
+            planName: planName, 
+            price: price,
+            periode: periode 
+            }))
+
+            console.log(formValues)
         setStep(3)
     }
 
@@ -147,34 +79,34 @@ function SecondPage({setStep, step, formValues, setFormValues}) {
             <h1>Select your plan</h1>
             <p>You have the option of monthly or yearly billing.</p>
             <PlanWrapper>
-                <PlanOption id='arcade' onClick={() => handleClick('arcade')}>
-                    <img src={arcade} alt='icon'></img>
+                <PlanOption className={planName === 'arcade' ? 'active' : ''} onClick={() => {
+                    handleClick('arcade', isChecked ? 90 : 9, isChecked ? 'yearly' : 'monthly') 
+                }}>
+                    <img src={arcade} alt='icon'/>
                     <TitleCard>Arcade</TitleCard>
-                    <div>{isChecked? 
-                        <div>
-                            <PriceText className='price'>$90/yr</PriceText>
-                            <FreeText>2 months free</FreeText>
-                        </div> : <PriceText  className='price'>$9/mo</PriceText>}
+                    <div>
+                        <PriceText>{isChecked ? '$90/yr' : '$9/mo'}</PriceText>
+                        <FreeText>{isChecked ? '2 months free' : <>&nbsp;</>}</FreeText>
                     </div>
                 </PlanOption>
-                <PlanOption id='advanced' onClick={() => handleClick('advanced')}>
-                    <img src={advanced} alt='icon'></img>
+                <PlanOption className={planName === 'advanced' ? 'active' : ''} onClick={() => {
+                    handleClick('advanced', isChecked ? 120 : 12, isChecked ? 'yearly' : 'monthly')
+                }}>
+                    <img src={advanced} alt='icon'/>
                     <TitleCard>Advanced</TitleCard>
-                    <div>{isChecked? 
-                        <div>
-                            <PriceText className='price'>$120/yr</PriceText>
-                            <FreeText>2 months free</FreeText>
-                        </div> : <PriceText className='price'>$12/mo</PriceText>}
+                    <div>
+                        <PriceText>{isChecked ? '$120/yr' : '$12/mo'}</PriceText>
+                        <FreeText>{isChecked ? '2 months free' : <>&nbsp;</>}</FreeText>
                     </div>
                 </PlanOption>
-                <PlanOption id='pro' onClick={() => handleClick('pro')}>
-                    <img src={pro} alt='icon'></img>
+                <PlanOption className={planName === 'pro' ? 'active' : ''} onClick={() => {
+                    handleClick('pro', isChecked ? 150 : 15, isChecked ? 'yearly' : 'monthly')
+                }}>
+                    <img src={pro} alt='icon'/>
                     <TitleCard>Pro</TitleCard>
-                    <div>{isChecked? 
-                        <div>
-                            <PriceText className='price'>$150/yr</PriceText>
-                            <FreeText>2 months free</FreeText>
-                        </div> : <PriceText className='price'>$15/mo</PriceText>}
+                    <div>
+                        <PriceText>{isChecked ? '$150/yr' : '$15/mo'}</PriceText>
+                        <FreeText>{isChecked ? '2 months free' : <>&nbsp;</>}</FreeText>
                     </div>
                 </PlanOption>
             </PlanWrapper>

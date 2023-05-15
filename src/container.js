@@ -19,6 +19,7 @@ const Wrapper = styled.div`
 
 function Container(){
 
+    // Initialisation d'un objet vide pour le state qui recevra les valeurs du formulaire et state permettant de naviguer entre les pages
     const [step , setStep] = useState(1)
     const [formValues, setFormValues] = useState({})
 
