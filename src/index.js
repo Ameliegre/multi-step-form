@@ -73,6 +73,7 @@ const GlobalStyle = createGlobalStyle`
   .btnWrapper {
     display: flex;
     justify-content: space-between;
+    margin-top: 40px;
   }
 `
 

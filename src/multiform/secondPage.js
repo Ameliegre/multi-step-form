@@ -4,7 +4,6 @@ import pro from '../assets/images/icon-pro.svg'
 import { PlanWrapper, PlanOption, TitleCard, PriceText, FreeText, OptionWrapper, SelectText, ToggleWrapper, ToggleBtn, SliderBtn } from './styled/secondPage.styled'
 import { useState } from 'react'
 
-
 function SecondPage({setStep, step, formValues, setFormValues}) {
 
     //State permettant de jouer sur l'affichage des données monthly/yearly du bouton toggle 
@@ -15,7 +14,7 @@ function SecondPage({setStep, step, formValues, setFormValues}) {
     const [price, setPrice] = useState(formValues?.price);
     const [periode, setPeriode] = useState(formValues?.periode);
     
-    //
+    //Gere la logique d'affichage du bouton toggle ainsi que la maj des states de chq plans selectionné
     function handleToggle() {
         setIsChecked(!isChecked); 
 
@@ -27,7 +26,7 @@ function SecondPage({setStep, step, formValues, setFormValues}) {
             setPeriode('yearly') 
         }
 
-        if (isChecked &&  planName === 'advanced') {
+        if (isChecked && planName === 'advanced') {
             setPrice(12)
             setPeriode('monthly')
           } else if (!isChecked && planName === 'advanced') {
@@ -70,8 +69,7 @@ function SecondPage({setStep, step, formValues, setFormValues}) {
             periode: periode 
             }))
 
-            console.log(formValues)
-        setStep(3)
+        setStep(step + 1)
     }
 
     return (
@@ -113,7 +111,7 @@ function SecondPage({setStep, step, formValues, setFormValues}) {
             <OptionWrapper>
                 <SelectText className={isChecked ? '' : 'select'}>Monthly</SelectText>
                 <ToggleWrapper>
-                    <ToggleBtn type='checkbox' checked={isChecked} onChange={handleToggle} className='select-btn'></ToggleBtn>
+                    <ToggleBtn type='checkbox' checked={isChecked} onChange={handleToggle} className='select-btn'/>
                     <SliderBtn className='sliderBtn'/>
                 </ToggleWrapper>
                 <SelectText className={isChecked ? 'select' : ''}>Yearly</SelectText>
