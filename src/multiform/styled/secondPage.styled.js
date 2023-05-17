@@ -46,7 +46,7 @@ export const OptionWrapper = styled.div`
     justify-content: center;
     background-color: #fafbff;
     align-items: center;
-    margin-top:30px;
+    margin: 30px 0px;
     border-radius: 5px;
 `
 

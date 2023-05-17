@@ -6,38 +6,34 @@ import { useState } from 'react'
 
 function SecondPage({setStep, step, formValues, setFormValues}) {
 
-    //State permettant de jouer sur l'affichage des données monthly/yearly du bouton toggle 
-    const [isChecked, setIsChecked] = useState(false);
-
     //State pour stocker les valeurs du plan selectionnées 
     const [planName, setPlanName] = useState(formValues?.planName);
     const [price, setPrice] = useState(formValues?.price);
     const [periode, setPeriode] = useState(formValues?.periode);
-    
     //Gere la logique d'affichage du bouton toggle ainsi que la maj des states de chq plans selectionné
     function handleToggle() {
-        setIsChecked(!isChecked); 
+        setPeriode(periode === 'yearly' ? "monthly" : "yearly"); 
 
-        if (isChecked && planName === 'arcade') {
+        if (periode === 'yearly' && planName === 'arcade') {
             setPrice(9)
             setPeriode('monthly')
-          } else if (!isChecked && planName === 'arcade') {
+          } else if (!periode === 'yearly' && planName === 'arcade') {
             setPrice(90);
             setPeriode('yearly') 
         }
 
-        if (isChecked && planName === 'advanced') {
+        if (periode === 'yearly' && planName === 'advanced') {
             setPrice(12)
             setPeriode('monthly')
-          } else if (!isChecked && planName === 'advanced') {
+          } else if (!periode === 'yearly' && planName === 'advanced') {
             setPrice(120);
             setPeriode('yearly') 
         }
 
-        if (isChecked && planName === 'pro') {
+        if (periode === 'yearly' && planName === 'pro') {
             setPrice(15)
             setPeriode('monthly')
-          } else if (!isChecked && planName === 'pro') {
+          } else if (!periode === 'yearly' && planName === 'pro') {
             setPrice(150);
             setPeriode('yearly') 
         }
@@ -78,43 +74,43 @@ function SecondPage({setStep, step, formValues, setFormValues}) {
             <p>You have the option of monthly or yearly billing.</p>
             <PlanWrapper>
                 <PlanOption className={planName === 'arcade' ? 'active' : ''} onClick={() => {
-                    handleClick('arcade', isChecked ? 90 : 9, isChecked ? 'yearly' : 'monthly') 
+                    handleClick('arcade', periode === 'yearly' ? 90 : 9, periode === 'yearly' ? 'yearly' : 'monthly') 
                 }}>
                     <img src={arcade} alt='icon'/>
                     <TitleCard>Arcade</TitleCard>
                     <div>
-                        <PriceText>{isChecked ? '$90/yr' : '$9/mo'}</PriceText>
-                        <FreeText>{isChecked ? '2 months free' : <>&nbsp;</>}</FreeText>
+                        <PriceText>{periode === 'yearly' ? '$90/yr' : '$9/mo'}</PriceText>
+                        <FreeText>{periode === 'yearly' ? '2 months free' : <>&nbsp;</>}</FreeText>
                     </div>
                 </PlanOption>
                 <PlanOption className={planName === 'advanced' ? 'active' : ''} onClick={() => {
-                    handleClick('advanced', isChecked ? 120 : 12, isChecked ? 'yearly' : 'monthly')
+                    handleClick('advanced', periode === 'yearly' ? 120 : 12, periode === 'yearly' ? 'yearly' : 'monthly')
                 }}>
                     <img src={advanced} alt='icon'/>
                     <TitleCard>Advanced</TitleCard>
                     <div>
-                        <PriceText>{isChecked ? '$120/yr' : '$12/mo'}</PriceText>
-                        <FreeText>{isChecked ? '2 months free' : <>&nbsp;</>}</FreeText>
+                        <PriceText>{periode === 'yearly' ? '$120/yr' : '$12/mo'}</PriceText>
+                        <FreeText>{periode === 'yearly' ? '2 months free' : <>&nbsp;</>}</FreeText>
                     </div>
                 </PlanOption>
                 <PlanOption className={planName === 'pro' ? 'active' : ''} onClick={() => {
-                    handleClick('pro', isChecked ? 150 : 15, isChecked ? 'yearly' : 'monthly')
+                    handleClick('pro', periode === 'yearly' ? 150 : 15, periode === 'yearly' ? 'yearly' : 'monthly')
                 }}>
                     <img src={pro} alt='icon'/>
                     <TitleCard>Pro</TitleCard>
                     <div>
-                        <PriceText>{isChecked ? '$150/yr' : '$15/mo'}</PriceText>
-                        <FreeText>{isChecked ? '2 months free' : <>&nbsp;</>}</FreeText>
+                        <PriceText>{periode === 'yearly' ? '$150/yr' : '$15/mo'}</PriceText>
+                        <FreeText>{periode === 'yearly' ? '2 months free' : <>&nbsp;</>}</FreeText>
                     </div>
                 </PlanOption>
             </PlanWrapper>
             <OptionWrapper>
-                <SelectText className={isChecked ? '' : 'select'}>Monthly</SelectText>
+                <SelectText className={periode === 'yearly' ? '' : 'select'}>Monthly</SelectText>
                 <ToggleWrapper>
-                    <ToggleBtn type='checkbox' checked={isChecked} onChange={handleToggle} className='select-btn'/>
+                    <ToggleBtn type='checkbox' checked={periode === 'yearly'} onChange={handleToggle} className='select-btn'/>
                     <SliderBtn className='sliderBtn'/>
                 </ToggleWrapper>
-                <SelectText className={isChecked ? 'select' : ''}>Yearly</SelectText>
+                <SelectText className={periode === 'yearly' ? 'select' : ''}>Yearly</SelectText>
             </OptionWrapper>
             <div className='btnWrapper'>
                 <button type='button' onClick={handlePrevious} className='button goBackBtn'>Go Back</button>
