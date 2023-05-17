@@ -9,11 +9,11 @@ function ThirdPage({setStep, step, formValues, setFormValues}) {
     const [addOns, setAddOns] = useState([])
 
     function handleClickAddOns(name, price) {
-        const addOnExists = addOns.some((addOn) => addOn.addOnName === name);
+        const addOnExists = addOns.some((addOn) => addOn.name === name);
 
         if (addOnExists) {
         // Si l'add-on existe déjà, on le supprime du tableau
-        setAddOns(addOns.filter((addOn) => addOn.addOnName !== name));
+        setAddOns(addOns.filter((addOn) => addOn.name !== name));
         } else {
         // Sinon, l'ajoute au tableau
         setAddOns([...addOns, { name, price }]);
