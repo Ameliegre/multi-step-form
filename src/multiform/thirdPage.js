@@ -36,7 +36,7 @@ function ThirdPage({setStep, step, formValues, setFormValues, handlePrevious}) {
                     <IconStyle src={checkmark} className={addOns.some((addOn) => addOn.name === 'online service') ? 'active' : ''} alt='icon'/>
                 </CheckboxBtnStyle>
                 <div>
-                    <h3>Online Service</h3>
+                    <h3>Online service</h3>
                     <TextStyle>Access to multiplayer games</TextStyle>
                 </div>
                 <AddOnsCost>{formValues.periode === 'monthly' ? '+$1/mo' : '+$10/yr' }</AddOnsCost>
@@ -60,7 +60,7 @@ function ThirdPage({setStep, step, formValues, setFormValues, handlePrevious}) {
                     <IconStyle src={checkmark} className={addOns.some((addOn) => addOn.name === 'customizable profile') ? 'active' : ''} alt='icon'/>
                 </CheckboxBtnStyle>
                 <div>
-                    <h3>Customizable Profile</h3>
+                    <h3>Customizable profile</h3>
                     <TextStyle>Custom theme on your profile</TextStyle>
                 </div>
                 <AddOnsCost>{formValues.periode === 'monthly' ? '+$2/mo' : '+$20/yr' }</AddOnsCost>
