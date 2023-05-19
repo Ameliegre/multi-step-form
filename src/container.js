@@ -23,11 +23,16 @@ function Container(){
     const [step , setStep] = useState(1)
     const [formValues, setFormValues] = useState({})
 
+    //Logique du bouton 'Go Back'
+    function handlePrevious() {
+        setStep(step - 1)
+    }
+
     console.log(formValues)
     return(
         <Wrapper>
             <SideStep step={step} setStep={setStep}/>
-            <MultiForm step={step} setStep={setStep} formValues={formValues} setFormValues={setFormValues}/>
+            <MultiForm step={step} setStep={setStep} formValues={formValues} setFormValues={setFormValues} handlePrevious={handlePrevious}/>
         </Wrapper>
     )
 }

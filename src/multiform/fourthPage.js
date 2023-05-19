@@ -1,11 +1,7 @@
-function FourthPage({setStep, step, setFormValues}) {
-
-    function handlePrevious() {
-        setStep(step - 1)
-    }
+function FourthPage({setStep, step, setFormValues, handlePrevious}) {
 
     function handleSubmit(){
-        setStep(5)
+        setStep(step + 1)
     }
 
     return(

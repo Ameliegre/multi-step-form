@@ -14,14 +14,14 @@ const MultiFormWrapper = styled.div`
     position: relative;
 `
 
-function MultiForm({step, setStep, formValues, setFormValues}) {
+function MultiForm({step, setStep, formValues, setFormValues, handlePrevious}) {
 
     return(
         <MultiFormWrapper>
             { step === 1 ? <FirstPage setStep={setStep} step={step} formValues={formValues} setFormValues={setFormValues}/>
-            : step === 2 ? <SecondPage setStep={setStep} step={step} formValues={formValues} setFormValues={setFormValues}/> 
-            : step === 3 ? <ThirdPage setStep={setStep}  step={step} formValues={formValues} setFormValues={setFormValues}/> 
-            : step === 4 ? <FourthPage setStep={setStep} step={step} formValues={formValues} setFormValues={setFormValues}/> 
+            : step === 2 ? <SecondPage setStep={setStep} step={step} formValues={formValues} setFormValues={setFormValues} handlePrevious={handlePrevious}/> 
+            : step === 3 ? <ThirdPage setStep={setStep}  step={step} formValues={formValues} setFormValues={setFormValues} handlePrevious={handlePrevious}/> 
+            : step === 4 ? <FourthPage setStep={setStep} step={step} formValues={formValues} setFormValues={setFormValues} handlePrevious={handlePrevious}/> 
             : step === 5 ? <ThankYou/>
             : null 
             }

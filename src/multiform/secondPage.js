@@ -4,12 +4,13 @@ import pro from '../assets/images/icon-pro.svg'
 import { PlanWrapper, PlanOption, TitleCard, PriceText, FreeText, OptionWrapper, SelectText, ToggleWrapper, ToggleBtn, SliderBtn } from './styled/secondPage.styled'
 import { useState } from 'react'
 
-function SecondPage({setStep, step, formValues, setFormValues}) {
+function SecondPage({setStep, step, formValues, setFormValues, handlePrevious}) {
 
     //State pour stocker les valeurs du plan selectionnées 
     const [planName, setPlanName] = useState(formValues?.planName);
     const [price, setPrice] = useState(formValues?.price);
     const [periode, setPeriode] = useState(formValues?.periode);
+    
     //Gere la logique d'affichage du bouton toggle ainsi que la maj des states de chq plans selectionné
     function handleToggle() {
         setPeriode(periode === 'yearly' ? "monthly" : "yearly"); 
@@ -37,11 +38,6 @@ function SecondPage({setStep, step, formValues, setFormValues}) {
             setPrice(150);
             setPeriode('yearly') 
         }
-    }
-
-    //Permet d'acceder à la page précédente sans conditions
-    function handlePrevious() {
-        setStep(step - 1)
     }
 
     //Permet de recuperer et stocker les données de la selection du tarif au clic sur le plan

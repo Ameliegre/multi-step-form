@@ -3,10 +3,10 @@ import checkmark from '../assets/images/icon-checkmark.svg'
 import { useState } from "react"
 
 
-function ThirdPage({setStep, step, formValues, setFormValues}) {
+function ThirdPage({setStep, step, formValues, setFormValues, handlePrevious}) {
 
     //State permettant de cocher la case selectionnée par Add-ons
-    const [addOns, setAddOns] = useState([])
+    const [addOns, setAddOns] = useState(formValues?.addOns ?? [])
 
     function handleClickAddOns(name, price) {
         const addOnExists = addOns.some((addOn) => addOn.name === name);
@@ -20,13 +20,8 @@ function ThirdPage({setStep, step, formValues, setFormValues}) {
         }
     }
 
-    function handlePrevious() {
-        setStep(step - 1)
-    }
-
-    function handleSubmit(){
+    function handleSubmit() {
         setFormValues({...formValues, addOns})
-        
         setStep(step + 1)
     }
 
@@ -34,7 +29,7 @@ function ThirdPage({setStep, step, formValues, setFormValues}) {
         <>
             <h1>Pick add-ons</h1>
             <p>Add-ons help enhance your gaming experience.</p>
-            <AddOnsWrapper className={addOns.some((addOn) => addOn.name === 'online service') ? 'active' : ''}>
+            <AddOnsWrapper className={addOns?.some((addOn) => addOn.name === 'online service') ? 'active' : ''}>
                 <CheckboxBtnStyle type='checkbox' checked={addOns} onClick={() => {
                     handleClickAddOns('online service', formValues.periode === 'monthly' ? 1 : 10 )
                     }}>
