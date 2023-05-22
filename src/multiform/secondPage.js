@@ -13,6 +13,7 @@ function SecondPage({setStep, step, formValues, setFormValues, handlePrevious}) 
     
     //Gere la logique d'affichage du bouton toggle ainsi que la maj des states de chq plans selectionné
     function handleToggle() {
+        setPeriode(periode === 'yearly' ? "monthly" : "yearly"); 
 
         if (periode === 'yearly') {
             if (planName === 'arcade') {

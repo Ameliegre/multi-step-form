@@ -56,8 +56,8 @@ export const ChangeWordStyle = styled.button`
     font-size:14px;
     &:hover{
         background-color: transparent;
+        color: #473dff;
     }
-
 `
 
 export const TotalWrapperStyle = styled.div`
@@ -65,4 +65,9 @@ export const TotalWrapperStyle = styled.div`
     flex-direction: row;
     justify-content: space-between;
     padding: 10px 20px 0 20px;
+`
+
+export const TotalStyle = styled.p`
+    color: #473dff;
+    font-weight: 700;
 `

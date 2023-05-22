@@ -15,6 +15,7 @@ export const InputStyle = styled.input`
     border: 1px solid hsl(231,11%,63%);
     padding:12px;
     border-radius: 8px;
+    cursor:pointer;
     &:focus {
         outline: 1px solid hsl(228, 100%, 84%);
     }

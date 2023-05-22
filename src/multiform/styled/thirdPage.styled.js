@@ -12,6 +12,7 @@ export const AddOnsWrapper = styled.div `
     margin-bottom:16px;
     &:hover{
         border: 1px solid #473dff;
+        cursor:pointer;
     }
     &.active{
         border: 1px solid #473dff;
@@ -53,6 +54,7 @@ export const IconStyle = styled.img`
 
 export const AddOnsCost = styled.p`
     margin-left: auto;
+    color: #473dff;
 `
 
 export const TextStyle = styled.p `

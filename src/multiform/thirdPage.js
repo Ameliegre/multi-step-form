@@ -20,8 +20,27 @@ function ThirdPage({setStep, step, formValues, setFormValues, handlePrevious}) {
         }
     }
 
+    //fonction qui met à jour les prix des add-ons en fonction de la période sélectionnée et met à jour les valeurs du formulaire
     function handleSubmit() {
-        setFormValues({...formValues, addOns})
+        //Crée une copie du tableau addOns
+        let updatedAddOns = [...addOns];
+
+        //Cet objet associe chaque add-on à son prix pour chaque période possible (mensuelle et annuelle).
+        const addOnMapping = {
+            'online service': { monthly: 1, yearly: 10 },
+            'larger storage': { monthly: 2, yearly: 20 },
+            'customizable profile': { monthly: 2, yearly: 20 }
+          };
+        
+        //Extraction du nom de l'add-on, utilisation du nom de l'add-on et de la période sélectionnée pour accéder au prix correspondant dans l'objet addOnMapping. 
+        //Ce prix est ensuite assigné à la propriété price de l'add-on.
+        updatedAddOns.forEach((addOn) => {
+        const { name } = addOn;
+        const price = addOnMapping[name][formValues.periode];
+        addOn.price = price;
+        });
+
+        setFormValues({ ...formValues, addOns: updatedAddOns });
         setStep(step + 1)
     }
 

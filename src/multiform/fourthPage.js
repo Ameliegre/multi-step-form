@@ -1,4 +1,4 @@
-import { AddOnsListNameStyle, AddOnsListPriceStyle, AddOnsListStyle, ChangeWordStyle, PlanSelectPriceStyle, PlanSelectStyle, PlanSelectWrapperStyle, SummaryWrapperStyle, TotalWrapperStyle } from "./styled/fourthPage.styled"
+import { AddOnsListNameStyle, AddOnsListPriceStyle, AddOnsListStyle, ChangeWordStyle, PlanSelectPriceStyle, PlanSelectStyle, PlanSelectWrapperStyle, SummaryWrapperStyle, TotalStyle, TotalWrapperStyle } from "./styled/fourthPage.styled"
 
 function FourthPage({setStep, step, formValues, handlePrevious}) {
 
@@ -36,7 +36,7 @@ function FourthPage({setStep, step, formValues, handlePrevious}) {
                 </SummaryWrapperStyle>
                 <TotalWrapperStyle>
                     <p>{formValues.periode === 'yearly' ? 'Total (per year)' : 'Total (per month)' }</p>
-                    <p>+${SumAddons + formValues.price}/{formValues.periode === 'yearly' ? 'yr' : 'mo'}</p>
+                    <TotalStyle>+${SumAddons + formValues.price}/{formValues.periode === 'yearly' ? 'yr' : 'mo'}</TotalStyle>
                 </TotalWrapperStyle>
                
             </div>
