@@ -13,31 +13,30 @@ function SecondPage({setStep, step, formValues, setFormValues, handlePrevious}) 
     
     //Gere la logique d'affichage du bouton toggle ainsi que la maj des states de chq plans selectionné
     function handleToggle() {
-        setPeriode(periode === 'yearly' ? "monthly" : "yearly"); 
 
-        if (periode === 'yearly' && planName === 'arcade') {
-            setPrice(9)
-            setPeriode('monthly')
-          } else if (!periode === 'yearly' && planName === 'arcade') {
-            setPrice(90);
-            setPeriode('yearly') 
-        }
-
-        if (periode === 'yearly' && planName === 'advanced') {
-            setPrice(12)
-            setPeriode('monthly')
-          } else if (!periode === 'yearly' && planName === 'advanced') {
-            setPrice(120);
-            setPeriode('yearly') 
-        }
-
-        if (periode === 'yearly' && planName === 'pro') {
-            setPrice(15)
-            setPeriode('monthly')
-          } else if (!periode === 'yearly' && planName === 'pro') {
-            setPrice(150);
-            setPeriode('yearly') 
-        }
+        if (periode === 'yearly') {
+            if (planName === 'arcade') {
+              setPrice(9);
+              setPeriode('monthly');
+            } else if (planName === 'advanced') {
+              setPrice(12);
+              setPeriode('monthly');
+            } else if (planName === 'pro') {
+              setPrice(15);
+              setPeriode('monthly');
+            }
+          } else {
+            if (planName === 'arcade') {
+              setPrice(90);
+              setPeriode('yearly');
+            } else if (planName === 'advanced') {
+              setPrice(120);
+              setPeriode('yearly');
+            } else if (planName === 'pro') {
+              setPrice(150);
+              setPeriode('yearly');
+            }
+          }
     }
 
     //Permet de recuperer et stocker les données de la selection du tarif au clic sur le plan

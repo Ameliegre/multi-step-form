@@ -36,8 +36,6 @@ export const AddOnsListPriceStyle = styled.p`
     color: #02295a;
 `
 
-
-
 export const PlanSelectStyle = styled.h3`
     text-transform: capitalize;
 `
