@@ -1,7 +1,7 @@
 import arcade from '../assets/images/icon-arcade.svg'
 import advanced from '../assets/images/icon-advanced.svg'
 import pro from '../assets/images/icon-pro.svg'
-import { PlanWrapper, PlanOption, TitleCard, PriceText, FreeText, OptionWrapper, SelectText, ToggleWrapper, ToggleBtn, SliderBtn, MobileWrapper } from '../styled/secondPage.styled'
+import { PlanWrapper, PlanOption, TitleCard, PriceText, FreeText, OptionWrapper, SelectText, ToggleWrapper, ToggleBtn, SliderBtn, MobileWrapper, MobileTextWrapper } from '../styled/secondPage.styled'
 import { useState } from 'react'
 
 function SecondPage({setStep, step, formValues, setFormValues, handlePrevious}) {
@@ -75,10 +75,10 @@ function SecondPage({setStep, step, formValues, setFormValues, handlePrevious}) 
                     <img src={arcade} alt='icon'/>
                     <MobileWrapper>
                         <TitleCard>Arcade</TitleCard>
-                        <div>
+                        <MobileTextWrapper>
                             <PriceText>{periode === 'yearly' ? '$90/yr' : '$9/mo'}</PriceText>
                             <FreeText>{periode === 'yearly' ? '2 months free' : <>&nbsp;</>}</FreeText>
-                        </div>
+                        </MobileTextWrapper>
                     </MobileWrapper>
                 </PlanOption>
                 <PlanOption className={planName === 'advanced' ? 'active' : ''} onClick={() => {
@@ -87,10 +87,10 @@ function SecondPage({setStep, step, formValues, setFormValues, handlePrevious}) 
                     <img src={advanced} alt='icon'/>
                     <MobileWrapper>
                         <TitleCard>Advanced</TitleCard>
-                        <div>
+                        <MobileTextWrapper>
                             <PriceText>{periode === 'yearly' ? '$120/yr' : '$12/mo'}</PriceText>
                             <FreeText>{periode === 'yearly' ? '2 months free' : <>&nbsp;</>}</FreeText>
-                        </div>
+                        </MobileTextWrapper>
                     </MobileWrapper>
                 </PlanOption>
                 <PlanOption className={planName === 'pro' ? 'active' : ''} onClick={() => {
@@ -99,10 +99,10 @@ function SecondPage({setStep, step, formValues, setFormValues, handlePrevious}) 
                     <img src={pro} alt='icon'/>
                     <MobileWrapper>
                         <TitleCard>Pro</TitleCard>
-                        <div>
+                        <MobileTextWrapper>
                             <PriceText>{periode === 'yearly' ? '$150/yr' : '$15/mo'}</PriceText>
                             <FreeText>{periode === 'yearly' ? '2 months free' : <>&nbsp;</>}</FreeText>
-                        </div>
+                        </MobileTextWrapper>
                     </MobileWrapper>  
                 </PlanOption>
             </PlanWrapper>

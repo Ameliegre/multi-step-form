@@ -15,7 +15,9 @@ const MultiFormWrapper = styled.div`
     @media (max-width: 425px) {
         width: 80%;
         position: fixed;
-        top: 105px;
+        top: 84px;
+        height: 56vh;
+        overflow: scroll;
         margin-right:0;
         padding: 20px ;
         border-radius: 0.5rem;

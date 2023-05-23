@@ -1,5 +1,5 @@
 import { useState } from 'react'
-import { BtnMobileWrapper, ErrorStyle, FormStyle, InputStyle, LabelStyle, MessageStyle, MobileWrapper, TextMobileStyle } from '../styled/firstPage.styled'
+import { BtnMobileWrapper, ErrorStyle, FormStyle, InputStyle, LabelStyle, MessageStyle } from '../styled/firstPage.styled'
 
 const EMAIL_REGEX = /^[\w-.]+@([\w-]+\.)+[\w-]{2,4}$/
 const PHONE_REGEX = /^(?:(?:\+|00)33[\s.-]{0,3}(?:\(0\)[\s.-]{0,3})?|0)[1-9](?:(?:[\s.-]?\d{2}){4}|\d{2}(?:[\s.-]?\d{3}){2})$/
@@ -40,9 +40,9 @@ function FirstPage({setStep, step, formValues, setFormValues}) {
     return (
         <>
             <h1>Personal info</h1>
-            <TextMobileStyle>Please provide your name, email address, and phone number.</TextMobileStyle>
+            <p>Please provide your name, email address, and phone number.</p>
             <FormStyle onSubmit={handleSubmit}>
-                <MobileWrapper>
+                <div>
                     <MessageStyle>
                         <LabelStyle htmlFor="name">Name</LabelStyle> 
                         <ErrorStyle>{error && input.name === '' && (<span>{error}</span>)}</ErrorStyle>    
@@ -58,7 +58,7 @@ function FirstPage({setStep, step, formValues, setFormValues}) {
                         <ErrorStyle>{error && input.number === '' && (<span>{error}</span>)}</ErrorStyle>
                     </MessageStyle>
                     <InputStyle type="text" id="number" name='number' className={error && input.number === '' ? 'error' : '' } placeholder='e.g. +1 234 567 890' value={input.number} onChange={(e) =>  setInput({...input, [e.target.name] : e.target.value})}/>
-                </MobileWrapper>
+                </div>
                 <BtnMobileWrapper>
                     <button type='submit'>Next Step</button>
                 </BtnMobileWrapper>

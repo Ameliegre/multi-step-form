@@ -45,6 +45,9 @@ export const FreeText = styled.p`
     color: hsl(213, 96%, 18%);
     padding: 0 0 0 0;
     font-size: 12Px;
+    @media (max-width: 425px) {
+        margin-left: auto;
+    }
 `
 
 export const TitleCard = styled.h3`
@@ -61,7 +64,8 @@ export const OptionWrapper = styled.div`
     justify-content: center;
     background-color: #fafbff;
     align-items: center;
-    margin: 30px 0px;
+    margin:0px;
+    margin-top: 20px;
     border-radius: 5px;
 `
 
@@ -121,5 +125,13 @@ export const MobileWrapper = styled.div`
         display:flex
         flex-direction: column;
         padding-left: 18px;
+    }
+`
+
+export const MobileTextWrapper = styled.div`
+    @media (max-width: 425px) {
+        display:flex;
+        flex-direction: row;
+        width:214px;
     }
 `

@@ -46,6 +46,10 @@ const GlobalStyle = createGlobalStyle`
     color: #9699ab;
     padding: 15px 0 34px 0;
     margin: 0;
+    @media (max-width: 425px) {
+      padding: 15px 17px 0 0;
+      line-height: 30px;
+    }  
   }
 
   button {
@@ -64,6 +68,8 @@ const GlobalStyle = createGlobalStyle`
     @media (max-width: 425px) {
       margin-bottom: 4%;
       margin-right:11%;
+      border-radius: 3px;
+      padding:14px;
     } 
   }
 
@@ -80,6 +86,14 @@ const GlobalStyle = createGlobalStyle`
   .btnWrapper {
     display: flex;
     justify-content: space-between;
+    @media (max-width: 425px) {
+      position: fixed;
+      bottom:0;
+      height: 80px;
+      background-color: hsl(0, 0%, 100%);
+      width: 108%;
+      right: -8%;
+    } 
   }
 
 `
