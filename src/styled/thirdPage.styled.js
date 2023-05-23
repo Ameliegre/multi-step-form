@@ -18,6 +18,11 @@ export const AddOnsWrapper = styled.div `
         border: 1px solid #473dff;
         background-color: #f0f6ff;
     }
+    @media (max-width: 425px) {
+        margin-top: 20px;
+        margin-bottom:5px;
+        padding: 4px 15px;
+    }
 `
 
 export const CheckboxBtnStyle = styled.button`
@@ -32,6 +37,11 @@ export const CheckboxBtnStyle = styled.button`
     align-self:center;
     &:hover {
         background-color: transparent;
+    }
+    @media (max-width: 425px) {
+        margin-right: 10px;
+        width: 20px;
+        height: 20px;
     }
     
 `
@@ -49,14 +59,26 @@ export const IconStyle = styled.img`
         cursor: pointer;
         padding:4px;
         opacity: 1;
+        @media (max-width: 425px) {
+            height: 10px;
+            width: 10px;
+        } 
     }
+   
 `
 
 export const AddOnsCost = styled.p`
     margin-left: auto;
     color: #473dff;
+    @media (max-width: 425px) {
+        padding: 0;
+        font-size:13px;
+    }
 `
 
 export const TextStyle = styled.p `
-    padding: 10px 0 10px 0;
+    padding: 0 0 10px 0;
+    @media (max-width: 425px) {
+        font-size:13px;
+    }
 `
