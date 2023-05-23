@@ -15,14 +15,18 @@ const ImgStyle = styled.img`
     margin-bottom: 20px;
 `
 
+const ThankYouText = styled.p`
+    line-height : 26px;
+`
+
 function ThankYou() {
     return(
         <ThankYouWrapper>
             <ImgStyle src={thankYou} alt="checkmark"/>
             <h1>Thank you!</h1>
-            <p>Thanks for confirming your subscription! We hope you have fun 
+            <ThankYouText>Thanks for confirming your subscription! We hope you have fun 
             using our platform. If you ever need support, please feel free 
-            to email us at support@loremgaming.com.</p>
+            to email us at support@loremgaming.com.</ThankYouText>
         </ThankYouWrapper>
     )
 }

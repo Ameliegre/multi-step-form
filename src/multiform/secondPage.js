@@ -1,7 +1,7 @@
 import arcade from '../assets/images/icon-arcade.svg'
 import advanced from '../assets/images/icon-advanced.svg'
 import pro from '../assets/images/icon-pro.svg'
-import { PlanWrapper, PlanOption, TitleCard, PriceText, FreeText, OptionWrapper, SelectText, ToggleWrapper, ToggleBtn, SliderBtn } from './styled/secondPage.styled'
+import { PlanWrapper, PlanOption, TitleCard, PriceText, FreeText, OptionWrapper, SelectText, ToggleWrapper, ToggleBtn, SliderBtn, MobileWrapper } from '../styled/secondPage.styled'
 import { useState } from 'react'
 
 function SecondPage({setStep, step, formValues, setFormValues, handlePrevious}) {
@@ -73,31 +73,37 @@ function SecondPage({setStep, step, formValues, setFormValues, handlePrevious}) 
                     handleClick('arcade', periode === 'yearly' ? 90 : 9, periode === 'yearly' ? 'yearly' : 'monthly') 
                 }}>
                     <img src={arcade} alt='icon'/>
-                    <TitleCard>Arcade</TitleCard>
-                    <div>
-                        <PriceText>{periode === 'yearly' ? '$90/yr' : '$9/mo'}</PriceText>
-                        <FreeText>{periode === 'yearly' ? '2 months free' : <>&nbsp;</>}</FreeText>
-                    </div>
+                    <MobileWrapper>
+                        <TitleCard>Arcade</TitleCard>
+                        <div>
+                            <PriceText>{periode === 'yearly' ? '$90/yr' : '$9/mo'}</PriceText>
+                            <FreeText>{periode === 'yearly' ? '2 months free' : <>&nbsp;</>}</FreeText>
+                        </div>
+                    </MobileWrapper>
                 </PlanOption>
                 <PlanOption className={planName === 'advanced' ? 'active' : ''} onClick={() => {
                     handleClick('advanced', periode === 'yearly' ? 120 : 12, periode === 'yearly' ? 'yearly' : 'monthly')
                 }}>
                     <img src={advanced} alt='icon'/>
-                    <TitleCard>Advanced</TitleCard>
-                    <div>
-                        <PriceText>{periode === 'yearly' ? '$120/yr' : '$12/mo'}</PriceText>
-                        <FreeText>{periode === 'yearly' ? '2 months free' : <>&nbsp;</>}</FreeText>
-                    </div>
+                    <MobileWrapper>
+                        <TitleCard>Advanced</TitleCard>
+                        <div>
+                            <PriceText>{periode === 'yearly' ? '$120/yr' : '$12/mo'}</PriceText>
+                            <FreeText>{periode === 'yearly' ? '2 months free' : <>&nbsp;</>}</FreeText>
+                        </div>
+                    </MobileWrapper>
                 </PlanOption>
                 <PlanOption className={planName === 'pro' ? 'active' : ''} onClick={() => {
                     handleClick('pro', periode === 'yearly' ? 150 : 15, periode === 'yearly' ? 'yearly' : 'monthly')
                 }}>
                     <img src={pro} alt='icon'/>
-                    <TitleCard>Pro</TitleCard>
-                    <div>
-                        <PriceText>{periode === 'yearly' ? '$150/yr' : '$15/mo'}</PriceText>
-                        <FreeText>{periode === 'yearly' ? '2 months free' : <>&nbsp;</>}</FreeText>
-                    </div>
+                    <MobileWrapper>
+                        <TitleCard>Pro</TitleCard>
+                        <div>
+                            <PriceText>{periode === 'yearly' ? '$150/yr' : '$15/mo'}</PriceText>
+                            <FreeText>{periode === 'yearly' ? '2 months free' : <>&nbsp;</>}</FreeText>
+                        </div>
+                    </MobileWrapper>  
                 </PlanOption>
             </PlanWrapper>
             <OptionWrapper>

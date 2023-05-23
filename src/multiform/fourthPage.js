@@ -1,4 +1,4 @@
-import { AddOnsListNameStyle, AddOnsListPriceStyle, AddOnsListStyle, ChangeWordStyle, PlanSelectPriceStyle, PlanSelectStyle, PlanSelectWrapperStyle, SummaryWrapperStyle, TotalStyle, TotalWrapperStyle } from "./styled/fourthPage.styled"
+import { AddOnsListNameStyle, AddOnsListPriceStyle, AddOnsListStyle, ChangeWordStyle, PlanSelectPriceStyle, PlanSelectStyle, PlanSelectWrapperStyle, SummaryWrapperStyle, TotalStyle, TotalWrapperStyle } from "../styled/fourthPage.styled"
 
 function FourthPage({setStep, step, formValues, handlePrevious}) {
 

@@ -1,5 +1,5 @@
 import { useState } from 'react'
-import { ErrorStyle, FormStyle, InputStyle, LabelStyle, MessageStyle } from './styled/firstPage.styled'
+import { BtnMobileWrapper, ErrorStyle, FormStyle, InputStyle, LabelStyle, MessageStyle, MobileWrapper, TextMobileStyle } from '../styled/firstPage.styled'
 
 const EMAIL_REGEX = /^[\w-.]+@([\w-]+\.)+[\w-]{2,4}$/
 const PHONE_REGEX = /^(?:(?:\+|00)33[\s.-]{0,3}(?:\(0\)[\s.-]{0,3})?|0)[1-9](?:(?:[\s.-]?\d{2}){4}|\d{2}(?:[\s.-]?\d{3}){2})$/
@@ -40,24 +40,28 @@ function FirstPage({setStep, step, formValues, setFormValues}) {
     return (
         <>
             <h1>Personal info</h1>
-            <p>Please provide your name, email address, and phone number.</p>
+            <TextMobileStyle>Please provide your name, email address, and phone number.</TextMobileStyle>
             <FormStyle onSubmit={handleSubmit}>
-                <MessageStyle>
-                    <LabelStyle htmlFor="name">Name</LabelStyle> 
-                    <ErrorStyle>{error && input.name === '' && (<span>{error}</span>)}</ErrorStyle>    
-                </MessageStyle>
-                <InputStyle type="text" id="name" name='name' className={error && input.name === '' ? 'error' : '' } placeholder='e.g. Stephen King' value={input.name} onChange={(e) =>  setInput({...input, [e.target.name] : e.target.value})}/>
-                <MessageStyle>
-                    <LabelStyle htmlFor="email">Email Address</LabelStyle>
-                    <ErrorStyle>{error && input.email === '' && (<span>{error}</span>)}</ErrorStyle> 
-                </MessageStyle>
-                <InputStyle type="text" id="email" name='email' className={error && input.email === '' ? 'error' : '' } placeholder='e.g. stephen.king@lorem.com' value={input.email} onChange={(e) =>  setInput({...input, [e.target.name] : e.target.value})}/>
-                <MessageStyle>
-                    <LabelStyle htmlFor="number">Phone Number</LabelStyle>
-                    <ErrorStyle>{error && input.number === '' && (<span>{error}</span>)}</ErrorStyle>
-                </MessageStyle>
-                <InputStyle type="text" id="number" name='number' className={error && input.number === '' ? 'error' : '' } placeholder='e.g. +1 234 567 890' value={input.number} onChange={(e) =>  setInput({...input, [e.target.name] : e.target.value})}/>
-                <button type='submit'>Next Step</button>
+                <MobileWrapper>
+                    <MessageStyle>
+                        <LabelStyle htmlFor="name">Name</LabelStyle> 
+                        <ErrorStyle>{error && input.name === '' && (<span>{error}</span>)}</ErrorStyle>    
+                    </MessageStyle>
+                    <InputStyle type="text" id="name" name='name' className={error && input.name === '' ? 'error' : '' } placeholder='e.g. Stephen King' value={input.name} onChange={(e) =>  setInput({...input, [e.target.name] : e.target.value})}/>
+                    <MessageStyle>
+                        <LabelStyle htmlFor="email">Email Address</LabelStyle>
+                        <ErrorStyle>{error && input.email === '' && (<span>{error}</span>)}</ErrorStyle> 
+                    </MessageStyle>
+                    <InputStyle type="text" id="email" name='email' className={error && input.email === '' ? 'error' : '' } placeholder='e.g. stephen.king@lorem.com' value={input.email} onChange={(e) =>  setInput({...input, [e.target.name] : e.target.value})}/>
+                    <MessageStyle>
+                        <LabelStyle htmlFor="number">Phone Number</LabelStyle>
+                        <ErrorStyle>{error && input.number === '' && (<span>{error}</span>)}</ErrorStyle>
+                    </MessageStyle>
+                    <InputStyle type="text" id="number" name='number' className={error && input.number === '' ? 'error' : '' } placeholder='e.g. +1 234 567 890' value={input.number} onChange={(e) =>  setInput({...input, [e.target.name] : e.target.value})}/>
+                </MobileWrapper>
+                <BtnMobileWrapper>
+                    <button type='submit'>Next Step</button>
+                </BtnMobileWrapper>
             </FormStyle>
         </>
     )

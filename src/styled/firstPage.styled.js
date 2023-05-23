@@ -5,10 +5,33 @@ export const FormStyle = styled.form`
     flex-direction: column;
 `
 
+export const MobileWrapper = styled.div`
+  
+   
+`
+
+export const BtnMobileWrapper = styled.div`
+    display: flex;
+    justify-content: flex-end;
+    @media (max-width: 425px) {
+        position: fixed;
+        bottom: 0;
+        right: -8%;
+        width: 116%;
+        height: 80px;
+        background-color: hsl(0, 0%, 100%);
+        display: flex;
+        justify-content: flex-end;
+    }
+`
+
 export const LabelStyle = styled.label`
     color: #02295a;
     font-weight: 400;
     margin: 16px 0;
+    @media (max-width: 425px) {
+        margin-bottom:4px;
+    }
 `
 
 export const InputStyle = styled.input`
@@ -16,11 +39,15 @@ export const InputStyle = styled.input`
     padding:12px;
     border-radius: 8px;
     cursor:pointer;
+    min-width: -webkit-fill-available;
     &:focus {
         outline: 1px solid hsl(228, 100%, 84%);
     }
     &.error {
         border-color: hsl(354, 84%, 57%);
+    }
+    @media (max-width: 425px) {
+        border-radius: 4px;
     }
 `
 
@@ -35,4 +62,11 @@ export const ErrorStyle = styled.div`
     color: hsl(354, 84%, 57%);
     margin:0;
     font-weight:400;
+`
+
+export const TextMobileStyle = styled.p`
+    @media (max-width: 425px) {
+        padding: 15px 17px 0 0;
+        line-height: 30px;
+    }  
 `

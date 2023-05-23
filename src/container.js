@@ -15,6 +15,16 @@ const Wrapper = styled.div`
     padding: 15px;
     z-index:0;
     position: relative;
+    @media (max-width: 425px) {
+        flex-direction: column;
+        width: 77vw;
+        z-index: unset;
+        align-items: center;
+        height:60vh;
+        padding: 20px;
+        background-color: transparent;
+        box-shadow: none;
+    }
 `
 
 function Container(){

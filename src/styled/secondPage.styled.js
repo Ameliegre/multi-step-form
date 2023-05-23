@@ -5,6 +5,9 @@ export const PlanWrapper = styled.div`
     flex-direction: row;
     justify-content: space-between;
     column-gap:14px;
+    @media (max-width: 425px) {
+        flex-direction: column;
+    }
 `
 
 export const PlanOption = styled.div`
@@ -19,6 +22,15 @@ export const PlanOption = styled.div`
     &.active {
         outline: 1px solid hsl(243,100%,62%);
         background-color: #f0f6ff;
+    }
+    @media (max-width: 425px) {
+        width: 90%;
+        display:flex;
+        flex-direction: row;
+        margin-top:12px;
+        align-items: flex-start;
+        border-radius: 8px;
+        padding : 14px 16px
     }
 `
 
@@ -38,6 +50,9 @@ export const FreeText = styled.p`
 export const TitleCard = styled.h3`
     margin-top: 32px;
     font-size:16px;
+    @media (max-width: 425px) {
+        margin-top: 0;
+    }
 `
 
 export const OptionWrapper = styled.div`
@@ -99,4 +114,12 @@ export const SliderBtn = styled.span`
         border-radius: 50%;
     }
    
+`
+
+export const MobileWrapper = styled.div`
+    @media (max-width: 425px) {
+        display:flex
+        flex-direction: column;
+        padding-left: 18px;
+    }
 `

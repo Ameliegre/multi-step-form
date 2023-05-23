@@ -12,6 +12,16 @@ const MultiFormWrapper = styled.div`
     display: flex;
     flex-direction: column;
     position: relative;
+    @media (max-width: 425px) {
+        width: 80%;
+        position: fixed;
+        top: 105px;
+        margin-right:0;
+        padding: 20px ;
+        border-radius: 0.5rem;
+        background-color: hsl(0, 0%, 100%);
+        box-shadow: 0 0 1rem #d6d9e6;
+    }
 `
 
 function MultiForm({step, setStep, formValues, setFormValues, handlePrevious}) {

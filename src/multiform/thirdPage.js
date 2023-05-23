@@ -1,4 +1,4 @@
-import { AddOnsCost, AddOnsWrapper, CheckboxBtnStyle, IconStyle, TextStyle } from "./styled/thirdPage.styled"
+import { AddOnsCost, AddOnsWrapper, CheckboxBtnStyle, IconStyle, TextStyle } from "../styled/thirdPage.styled"
 import checkmark from '../assets/images/icon-checkmark.svg'
 import { useState } from "react"
 

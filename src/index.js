@@ -13,6 +13,9 @@ const GlobalStyle = createGlobalStyle`
     height:100vh;
     align-items: center;
     color: hsl(0, 0%, 100%);
+    @media (max-width: 425px) {
+      margin:0;
+    }
   }
 
   h1 {
@@ -58,6 +61,10 @@ const GlobalStyle = createGlobalStyle`
     &:hover {
       background-color:hsl(243, 100%, 62%)
     }
+    @media (max-width: 425px) {
+      margin-bottom: 4%;
+      margin-right:11%;
+    } 
   }
 
   .goBackBtn {
@@ -74,6 +81,7 @@ const GlobalStyle = createGlobalStyle`
     display: flex;
     justify-content: space-between;
   }
+
 `
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
