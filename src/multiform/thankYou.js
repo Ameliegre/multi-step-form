@@ -13,10 +13,20 @@ const ImgStyle = styled.img`
     width:80px;
     margin-top: 100px;
     margin-bottom: 20px;
+    @media (max-width: 425px) {
+        margin-top: 28px;
+    }
 `
 
 const ThankYouText = styled.p`
     line-height : 26px;
+    br {
+        display: none;
+    }
+    @media (max-width: 425px) {
+        font-size: 16px;
+        padding: 15px 3px;
+    }
 `
 
 function ThankYou() {
@@ -24,8 +34,8 @@ function ThankYou() {
         <ThankYouWrapper>
             <ImgStyle src={thankYou} alt="checkmark"/>
             <h1>Thank you!</h1>
-            <ThankYouText>Thanks for confirming your subscription! We hope you have fun 
-            using our platform. If you ever need support, please feel free 
+            <ThankYouText>Thanks for confirming your subscription! <br/> 
+            We hope you have fun using our platform. If you ever need support, please feel free 
             to email us at support@loremgaming.com.</ThankYouText>
         </ThankYouWrapper>
     )

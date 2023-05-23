@@ -16,7 +16,7 @@ const MultiFormWrapper = styled.div`
         width: 80%;
         position: fixed;
         top: 84px;
-        height: 56vh;
+        height: 50vh;
         overflow: scroll;
         margin-right:0;
         padding: 20px ;

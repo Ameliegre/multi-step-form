@@ -19,7 +19,7 @@ export const AddOnsWrapper = styled.div `
         background-color: #f0f6ff;
     }
     @media (max-width: 425px) {
-        margin-top: 20px;
+        margin-top: 10px;
         margin-bottom:5px;
         padding: 4px 15px;
     }
