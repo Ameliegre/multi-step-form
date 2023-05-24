@@ -3,7 +3,7 @@ import checkmark from '../assets/images/icon-checkmark.svg'
 import { useState } from "react"
 
 
-function ThirdPage({setStep, step, formValues, setFormValues, handlePrevious}) {
+function ThirdPage({setStep, step, formValues, setFormValues, HandlePrevious}) {
 
     //State permettant de cocher la case selectionnée par Add-ons
     const [addOns, setAddOns] = useState(formValues?.addOns ?? [])
@@ -85,7 +85,7 @@ function ThirdPage({setStep, step, formValues, setFormValues, handlePrevious}) {
                 <AddOnsCost>{formValues.periode === 'monthly' ? '+$2/mo' : '+$20/yr' }</AddOnsCost>
             </AddOnsWrapper>
             <div className='btnWrapper'>
-                <button type='button' onClick={handlePrevious} className='button goBackBtn'>Go Back</button>
+                <button type='button' onClick={HandlePrevious} className='button goBackBtn'>Go Back</button>
                 <button type='button' onClick={handleSubmit}>Next Step</button>
             </div>
         </>

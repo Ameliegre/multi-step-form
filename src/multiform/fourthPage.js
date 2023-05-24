@@ -1,6 +1,6 @@
 import { AddOnsListNameStyle, AddOnsListPriceStyle, AddOnsListStyle, ChangeWordStyle, PlanSelectPriceStyle, PlanSelectStyle, PlanSelectWrapperStyle, SummaryWrapperStyle, TotalStyle, TotalWrapperStyle } from "../styled/fourthPage.styled"
 
-function FourthPage({setStep, step, formValues, handlePrevious}) {
+function FourthPage({setStep, step, formValues, HandlePrevious}) {
 
     function handleClick(){
         setStep(step - 2)
@@ -41,7 +41,7 @@ function FourthPage({setStep, step, formValues, handlePrevious}) {
                
             </div>
             <div className='btnWrapper'>
-                <button type='button' onClick={handlePrevious} className='button goBackBtn'>Go Back</button>
+                <button type='button' onClick={HandlePrevious} className='button goBackBtn'>Go Back</button>
                 <button type='button' onClick={handleSubmit}>Confirm</button>
             </div>
         </>

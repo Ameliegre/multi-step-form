@@ -1,7 +1,7 @@
-import styled from 'styled-components'
-import SideStep from './sideStep'
-import MultiForm from './multiform/multiForm'
-import { useState } from 'react'
+import styled from 'styled-components';
+import React, { useState } from 'react';
+import SideStep from './sideStep';
+import MultiForm from './multiform/multiForm';
 
 const Wrapper = styled.div`
     background-color: hsl(0, 0%, 100%);
@@ -34,26 +34,25 @@ const Wrapper = styled.div`
         background-color: transparent;
         box-shadow: none;
     }
-`
+`;
 
-function Container(){
+function Container() {
+// Initialisation d'un objet vide pour le state qui recevra les valeurs du formulaire
+// et state permettant de naviguer entre les pages
+  const [step, setStep] = useState(1);
+  const [formValues, setFormValues] = useState({});
 
-    // Initialisation d'un objet vide pour le state qui recevra les valeurs du formulaire et state permettant de naviguer entre les pages
-    const [step , setStep] = useState(1)
-    const [formValues, setFormValues] = useState({})
-
-    //Logique du bouton 'Go Back'
-    function handlePrevious() {
-        setStep(step - 1)
-    }
-
-    console.log(formValues)
-    return(
-        <Wrapper>
-            <SideStep step={step} setStep={setStep}/>
-            <MultiForm step={step} setStep={setStep} formValues={formValues} setFormValues={setFormValues} handlePrevious={handlePrevious}/>
-        </Wrapper>
-    )
+  return (
+    <Wrapper>
+      <SideStep step={step} setStep={setStep} />
+      <MultiForm
+        step={step}
+        setStep={setStep}
+        formValues={formValues}
+        setFormValues={setFormValues}
+      />
+    </Wrapper>
+  );
 }
 
-export default Container
+export default Container;

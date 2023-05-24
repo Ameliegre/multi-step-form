@@ -1,7 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
-import { createGlobalStyle } from 'styled-components'
-import Container from './container.js'
+import { createGlobalStyle } from 'styled-components';
+import Container from './container';
 
 const GlobalStyle = createGlobalStyle`
   body {
@@ -96,13 +96,13 @@ const GlobalStyle = createGlobalStyle`
     } 
   }
 
-`
+`;
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-    <link href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@400;500;700&display=swap" rel="stylesheet"/>
-    <GlobalStyle/>
-    <Container/>
-  </React.StrictMode>
+    <link href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@400;500;700&display=swap" rel="stylesheet" />
+    <GlobalStyle />
+    <Container />
+  </React.StrictMode>,
 );
