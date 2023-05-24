@@ -8,7 +8,7 @@ export const SummaryWrapperStyle = styled.div`
     justify-content: space-between;
     border-radius: 12px;
     padding:20px;
-    @media (max-width: 425px) {
+    @media (max-width: 850px) {
         margin-top: 20px;
     }
 `
@@ -43,6 +43,9 @@ export const AddOnsListPriceStyle = styled.p`
     color: #02295a;
     @media (max-width: 425px) {
         padding: 10px 0px 0 0;
+    }
+    @media (min-width: 426px) and (max-width: 850px){
+        padding: 15px 0 0 0;
     }
 `
 
@@ -83,7 +86,7 @@ export const TotalWrapperStyle = styled.div`
 export const TotalStyle = styled.p`
     color: #473dff;
     font-weight: 700;
-    @media (max-width: 425px) {
+    @media (max-width: 850px) {
         padding: 15px 0 0 0;
     }
 `

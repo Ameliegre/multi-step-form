@@ -18,7 +18,7 @@ export const AddOnsWrapper = styled.div `
         border: 1px solid #473dff;
         background-color: #f0f6ff;
     }
-    @media (max-width: 425px) {
+    @media (max-width: 850px) {
         margin-top: 10px;
         margin-bottom:5px;
         padding: 4px 15px;
@@ -73,6 +73,9 @@ export const AddOnsCost = styled.p`
     @media (max-width: 425px) {
         padding: 0;
         font-size:13px;
+    }
+    @media (min-width: 426px) and (max-width: 850px){
+        padding: 0;
     }
 `
 

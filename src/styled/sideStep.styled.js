@@ -9,6 +9,12 @@ export const SelectSide = styled.div`
         top: -22vh;
         width: 130%;
     }
+    @media (min-width: 426px) and (max-width: 850px) {
+        position: relative;
+        z-index: -9999;
+        left:0;
+        width: 130%;
+    }
 `
 
 export const Imgstyle = styled.img`
@@ -17,6 +23,10 @@ export const Imgstyle = styled.img`
     position: relative;
     @media (max-width: 425px) {
         width:100%;
+    }
+    @media (min-width: 426px) and (max-width: 850px){
+        height:100vh;
+        position: fixed;
     }
 `
 
@@ -30,6 +40,9 @@ export const StepWrapper = styled.div`
         position: absolute;
         top: 22%;
         left: 27%;
+    }
+    @media (min-width: 426px) and (max-width: 850px){
+
     }
 `
 
@@ -61,7 +74,7 @@ export const StepNumber = styled.div`
 `
 
 export const StepMobileStyle = styled.div`
-    @media (max-width: 425px) {
+    @media (max-width: 850px) {
         display: none;
     }
 `

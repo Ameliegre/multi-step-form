@@ -15,7 +15,7 @@ const Wrapper = styled.div`
     padding: 15px;
     z-index:0;
     position: relative;
-    @media (max-width: 425px) {
+    @media (max-width: 850px) {
         flex-direction: column;
         width: 77vw;
         z-index: unset;

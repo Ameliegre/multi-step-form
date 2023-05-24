@@ -23,7 +23,7 @@ export const PlanOption = styled.div`
         outline: 1px solid hsl(243,100%,62%);
         background-color: #f0f6ff;
     }
-    @media (max-width: 425px) {
+    @media (max-width: 850px) {
         width: 90%;
         display:flex;
         flex-direction: row;
@@ -31,6 +31,9 @@ export const PlanOption = styled.div`
         align-items: flex-start;
         border-radius: 8px;
         padding : 14px 16px
+    }
+    @media (min-width: 426px) and (max-width: 850px){
+        align-items: center;
     }
 `
 
@@ -45,7 +48,7 @@ export const FreeText = styled.p`
     color: hsl(213, 96%, 18%);
     padding: 0 0 0 0;
     font-size: 12Px;
-    @media (max-width: 425px) {
+    @media (max-width: 850px) {
         margin-left: auto;
     }
 `
@@ -53,7 +56,7 @@ export const FreeText = styled.p`
 export const TitleCard = styled.h3`
     margin-top: 32px;
     font-size:16px;
-    @media (max-width: 425px) {
+    @media (max-width: 850px) {
         margin-top: 0;
     }
 `
@@ -66,7 +69,11 @@ export const OptionWrapper = styled.div`
     align-items: center;
     margin:0px;
     margin-top: 20px;
+    margin-bottom:36px;
     border-radius: 5px;
+    @media (max-width: 425px) {
+        margin-bottom:0;
+    }
 `
 
 export const SelectText = styled.p`
@@ -121,7 +128,7 @@ export const SliderBtn = styled.span`
 `
 
 export const MobileWrapper = styled.div`
-    @media (max-width: 425px) {
+    @media (max-width: 850px) {
         display:flex
         flex-direction: column;
         padding-left: 18px;

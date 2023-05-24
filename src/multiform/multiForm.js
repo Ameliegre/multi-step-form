@@ -24,6 +24,18 @@ const MultiFormWrapper = styled.div`
         background-color: hsl(0, 0%, 100%);
         box-shadow: 0 0 1rem #d6d9e6;
     }
+    @media (min-width: 426px) and (max-width: 850px) {
+        width: 80%;
+        position: fixed;
+        top: 84px;
+        height: 430px;
+        overflow: scroll;
+        margin-right:0;
+        padding: 20px ;
+        border-radius: 0.5rem;
+        background-color: hsl(0, 0%, 100%);
+        box-shadow: 0 0 1rem #d6d9e6;
+    }
 `
 
 function MultiForm({step, setStep, formValues, setFormValues, handlePrevious}) {

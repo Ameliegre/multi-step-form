@@ -13,7 +13,7 @@ const GlobalStyle = createGlobalStyle`
     height:100vh;
     align-items: center;
     color: hsl(0, 0%, 100%);
-    @media (max-width: 425px) {
+    @media (max-width: 850px) {
       margin:0;
     }
   }
@@ -46,7 +46,7 @@ const GlobalStyle = createGlobalStyle`
     color: #9699ab;
     padding: 15px 0 34px 0;
     margin: 0;
-    @media (max-width: 425px) {
+    @media (max-width: 850px) {
       padding: 15px 17px 0 0;
       line-height: 30px;
     }  
@@ -65,7 +65,7 @@ const GlobalStyle = createGlobalStyle`
     &:hover {
       background-color:hsl(243, 100%, 62%)
     }
-    @media (max-width: 425px) {
+    @media (max-width: 485px) {
       margin-bottom: 4%;
       margin-right:11%;
       border-radius: 3px;
