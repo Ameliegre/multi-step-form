@@ -41,7 +41,7 @@ function Container() {
 // et state permettant de naviguer entre les pages
   const [step, setStep] = useState(1);
   const [formValues, setFormValues] = useState({});
-
+  console.log(formValues);
   return (
     <Wrapper>
       <SideStep step={step} setStep={setStep} />
