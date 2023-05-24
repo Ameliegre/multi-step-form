@@ -33,7 +33,7 @@ export const PlanOption = styled.div`
         padding : 14px 16px
     }
     @media (min-width: 426px) and (max-width: 850px){
-        align-items: center;
+        padding : 12px 16px 0 16px;
     }
 `
 

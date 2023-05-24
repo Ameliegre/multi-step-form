@@ -7,11 +7,10 @@ function SideStep({step}) {
     return(
         <SelectSide>
             <picture>
-                <source srcSet={sideBarMobile} media="(max-width: 425px)"/>
-                <source srcSet={sideBar}/>
+                <source srcSet={sideBarMobile} media="(max-width: 850px)"/>
+                <source srcSet={sideBar} />
                 <Imgstyle src={sideBar} alt='background'/>
             </picture>
-            
                 <StepWrapper>
                     <StepStyle>
                         <StepNumber className={step === 1 ? 'active' : ''}>1</StepNumber>

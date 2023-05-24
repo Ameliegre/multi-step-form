@@ -1,19 +1,16 @@
 import styled from 'styled-components'
 
-export const SelectSide = styled.div`
+export const SelectSide = styled.section`
     max-height:100%;
     position: relative;
-    @media (max-width: 425px) {
+    @media (max-width: 850px) {
         position: relative;
         z-index: -9999;
         top: -22vh;
         width: 130%;
     }
     @media (min-width: 426px) and (max-width: 850px) {
-        position: relative;
-        z-index: -9999;
-        left:0;
-        width: 130%;
+        top: -32vh;
     }
 `
 
@@ -21,12 +18,8 @@ export const Imgstyle = styled.img`
     height:100%;
     z-index:1;
     position: relative;
-    @media (max-width: 425px) {
+    @media (max-width: 850px) {
         width:100%;
-    }
-    @media (min-width: 426px) and (max-width: 850px){
-        height:100vh;
-        position: fixed;
     }
 `
 
@@ -34,15 +27,15 @@ export const StepWrapper = styled.div`
     position: relative;
     z-index:2;
     top: -100%;
-    @media (max-width: 425px) {
+    @media (max-width: 850px) {
         display: flex;
         flex-direction: row;
         position: absolute;
         top: 22%;
         left: 27%;
     }
-    @media (min-width: 426px) and (max-width: 850px){
-
+    @media (min-width: 426px) and (max-width: 850px) {
+        display : none;
     }
 `
 

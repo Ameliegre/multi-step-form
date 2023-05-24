@@ -5,7 +5,7 @@ import ThirdPage from './thirdPage'
 import FourthPage from './fourthPage'
 import ThankYou from './thankYou'
 
-const MultiFormWrapper = styled.div`
+const MultiFormWrapper = styled.main`
     width:56%;
     margin-right:6%;
     padding-top:2%;
