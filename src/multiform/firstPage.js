@@ -79,7 +79,7 @@ FirstPage.propTypes = {
   formValues: PropTypes.shape({
     name: PropTypes.string,
     email: PropTypes.string,
-    number: PropTypes.number,
+    number: PropTypes.string,
   }).isRequired,
   setFormValues: PropTypes.func.isRequired,
 };

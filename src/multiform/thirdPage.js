@@ -24,8 +24,6 @@ function ThirdPage({
     }
   }
 
-  console.log(addOns);
-
   // fonction qui met à jour les prix des add-ons en fonction de la période
   // sélectionnée et met à jour les valeurs du formulaire
   function handleSubmit() {

@@ -1,8 +1,8 @@
 /* eslint-disable import/no-extraneous-dependencies */
+import React, { useState, useEffect } from 'react';
 import styled from 'styled-components';
 import { motion, AnimatePresence } from 'framer-motion';
 import PropTypes from 'prop-types';
-import React from 'react';
 import FirstPage from './firstPage';
 import SecondPage from './secondPage';
 import ThirdPage from './thirdPage';
@@ -42,19 +42,48 @@ const MultiFormWrapper = styled.main`
     }
 `;
 
+const variants = {
+  enter: (direction) => ({
+    y: direction > 0 ? 500 : -500,
+    opacity: 0,
+  }),
+  animate: {
+    y: 0,
+    opacity: 1,
+  },
+  exit: (direction) => ({
+    y: direction > 0 ? -500 : 500,
+    opacity: 0,
+  }),
+};
+
 function MultiForm({
   step, setStep, formValues, setFormValues,
 }) {
+  const [direction, setDirection] = useState(0);
+
   // Logique du bouton 'Go Back'
   const handlePrevious = () => {
+    setDirection(-1);
     setStep(step - 1);
   };
+  useEffect(() => {
+    setDirection(1);
+  }, [step]);
 
   return (
     <MultiFormWrapper>
-      <AnimatePresence initial={false} mode="wait">
+      <AnimatePresence initial={false} custom={direction} mode="wait">
         {step === 1 && (
-        <motion.div key="first" initial={{ y: 500, opacity: 0 }} animate={{ y: 0, opacity: 1 }} transition={{ duration: 0.5 }} exit={{ y: -500, opacity: 0 }}>
+        <motion.div
+          variants={variants}
+          animate="animate"
+          initial="initial"
+          exit="exit"
+          key="first"
+          custom={direction}
+          transition={{ duration: 0.5 }}
+        >
           <FirstPage
             setStep={setStep}
             step={step}
@@ -64,7 +93,15 @@ function MultiForm({
         </motion.div>
         )}
         {step === 2 && (
-        <motion.div key="second" initial={{ y: 500, opacity: 0 }} animate={{ y: 0, opacity: 1 }} transition={{ duration: 0.5 }} exit={{ y: -500, opacity: 0 }}>
+        <motion.div
+          variants={variants}
+          animate="animate"
+          initial="initial"
+          exit="exit"
+          key="second"
+          custom={direction}
+          transition={{ duration: 0.5 }}
+        >
           <SecondPage
             setStep={setStep}
             step={step}
@@ -75,7 +112,15 @@ function MultiForm({
         </motion.div>
         )}
         {step === 3 && (
-        <motion.div key="third" initial={{ y: 500, opacity: 0 }} animate={{ y: 0, opacity: 1 }} transition={{ duration: 0.5 }} exit={{ y: -500, opacity: 0 }}>
+        <motion.div
+          variants={variants}
+          animate="animate"
+          initial="initial"
+          exit="exit"
+          key="third"
+          custom={direction}
+          transition={{ duration: 0.5 }}
+        >
           <ThirdPage
             setStep={setStep}
             step={step}
@@ -86,7 +131,15 @@ function MultiForm({
         </motion.div>
         )}
         {step === 4 && (
-        <motion.div key="fourth" initial={{ y: 500, opacity: 0 }} animate={{ y: 0, opacity: 1 }} transition={{ duration: 0.5 }} exit={{ y: -500, opacity: 0 }}>
+        <motion.div
+          variants={variants}
+          animate="animate"
+          initial="initial"
+          exit="exit"
+          key="fourth"
+          custom={direction}
+          transition={{ duration: 0.5 }}
+        >
           <FourthPage
             setStep={setStep}
             step={step}
@@ -96,7 +149,15 @@ function MultiForm({
         </motion.div>
         )}
         {step === 5 && (
-        <motion.div key="thankyou" initial={{ y: 500, opacity: 0 }} animate={{ y: 0, opacity: 1 }} transition={{ duration: 0.5 }} exit={{ y: -500, opacity: 0 }}>
+        <motion.div
+          variants={variants}
+          animate="animate"
+          initial="initial"
+          exit="exit"
+          key="thankyou"
+          custom={direction}
+          transition={{ duration: 0.5 }}
+        >
           <ThankYou />
         </motion.div>
         )}
