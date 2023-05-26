@@ -42,6 +42,7 @@ Install interactive-rating-component with npm
 
 During this project : 
 
-- xx
-- xx
-- xx
+- Extracting data from a form
+- Creation of toggle/switch and checked buttons
+- Type indication with PropTypes
+- Adding slide effect between each page with Framer Motion
