@@ -1,7 +1,6 @@
-import styled from 'styled-components'
+import styled from 'styled-components';
 
-
-export const AddOnsWrapper = styled.div `
+export const AddOnsWrapper = styled.div`
     display: flex;
     flex-direction: row;
     justify-content: flex-start;
@@ -23,7 +22,7 @@ export const AddOnsWrapper = styled.div `
         margin-bottom:5px;
         padding: 4px 15px;
     }
-`
+`;
 
 export const CheckboxBtnStyle = styled.button`
     background-color: transparent;
@@ -44,7 +43,7 @@ export const CheckboxBtnStyle = styled.button`
         height: 20px;
     }
     
-`
+`;
 
 export const IconStyle = styled.img`
     opacity: 0;
@@ -65,7 +64,7 @@ export const IconStyle = styled.img`
         } 
     }
    
-`
+`;
 
 export const AddOnsCost = styled.p`
     margin-left: auto;
@@ -77,11 +76,11 @@ export const AddOnsCost = styled.p`
     @media (min-width: 426px) and (max-width: 850px){
         padding: 0;
     }
-`
+`;
 
-export const TextStyle = styled.p `
+export const TextStyle = styled.p`
     padding: 0 0 10px 0;
     @media (max-width: 425px) {
         font-size:13px;
     }
-`
+`;

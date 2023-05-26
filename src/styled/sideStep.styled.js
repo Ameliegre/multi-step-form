@@ -1,4 +1,4 @@
-import styled from 'styled-components'
+import styled from 'styled-components';
 
 export const SelectSide = styled.section`
     max-height:100%;
@@ -12,7 +12,7 @@ export const SelectSide = styled.section`
     @media (min-width: 426px) and (max-width: 850px) {
         top: -32vh;
     }
-`
+`;
 
 export const Imgstyle = styled.img`
     height:100%;
@@ -21,7 +21,7 @@ export const Imgstyle = styled.img`
     @media (max-width: 850px) {
         width:100%;
     }
-`
+`;
 
 export const StepWrapper = styled.div`
     position: relative;
@@ -37,7 +37,7 @@ export const StepWrapper = styled.div`
     @media (min-width: 426px) and (max-width: 850px) {
         display : none;
     }
-`
+`;
 
 export const StepStyle = styled.div`
     display: flex;
@@ -50,7 +50,7 @@ export const StepStyle = styled.div`
     @media (max-width: 425px) {
         padding: 0 20px 0 0;
     }
-`
+`;
 
 export const StepNumber = styled.div`
     width: 30px;
@@ -64,17 +64,17 @@ export const StepNumber = styled.div`
         background-color: #bfe2fd;
         color: #02295a;
     }
-`
+`;
 
 export const StepMobileStyle = styled.div`
     @media (max-width: 850px) {
         display: none;
     }
-`
+`;
 
 export const StepText = styled.div`
     color: #adbeff;
     font-weight: 400;
     font-size: 12px;
     margin:0;
-`
+`;

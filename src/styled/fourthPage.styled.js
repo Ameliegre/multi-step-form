@@ -1,5 +1,4 @@
-import styled from 'styled-components'
-
+import styled from 'styled-components';
 
 export const SummaryWrapperStyle = styled.div`
     background-color: #f0f6ff; 
@@ -11,7 +10,7 @@ export const SummaryWrapperStyle = styled.div`
     @media (max-width: 850px) {
         margin-top: 20px;
     }
-`
+`;
 
 export const PlanSelectWrapperStyle = styled.div`
     display : flex;
@@ -19,13 +18,13 @@ export const PlanSelectWrapperStyle = styled.div`
     justify-content: space-between;
     align-items: center;
     border-bottom: 1px solid hsl(229, 24%, 87%);
-`
+`;
 
 export const AddOnsListStyle = styled.div`
     display : flex;
     flex-direction: row;
     justify-content: space-between;
-`
+`;
 
 export const AddOnsListNameStyle = styled.p`
     padding-bottom: 0;
@@ -35,7 +34,7 @@ export const AddOnsListNameStyle = styled.p`
         padding-top: 10px; 
         padding-right:0;
     }
-`
+`;
 
 export const AddOnsListPriceStyle = styled.p`
     padding-bottom: 0;
@@ -47,17 +46,17 @@ export const AddOnsListPriceStyle = styled.p`
     @media (min-width: 426px) and (max-width: 850px){
         padding: 15px 0 0 0;
     }
-`
+`;
 
 export const PlanSelectStyle = styled.h3`
     text-transform: capitalize;
-`
+`;
 
 export const PlanSelectPriceStyle = styled.p`
     color: #02295a;
     font-weight: 700;
     padding: 0 0 16px 0;
-`
+`;
 
 export const ChangeWordStyle = styled.button`
     text-decoration: 2px underline; 
@@ -74,14 +73,14 @@ export const ChangeWordStyle = styled.button`
     @media (max-width: 425px) {
         padding: 6px 0 14px 0;
     }
-`
+`;
 
 export const TotalWrapperStyle = styled.div`
     display : flex;
     flex-direction: row;
     justify-content: space-between;
     padding: 10px 20px 0 20px;
-`
+`;
 
 export const TotalStyle = styled.p`
     color: #473dff;
@@ -89,4 +88,4 @@ export const TotalStyle = styled.p`
     @media (max-width: 850px) {
         padding: 15px 0 0 0;
     }
-`
+`;

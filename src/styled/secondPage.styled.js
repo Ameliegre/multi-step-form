@@ -1,4 +1,4 @@
-import styled from 'styled-components'
+import styled from 'styled-components';
 
 export const PlanWrapper = styled.div`
     display: flex;
@@ -8,7 +8,7 @@ export const PlanWrapper = styled.div`
     @media (max-width: 425px) {
         flex-direction: column;
     }
-`
+`;
 
 export const PlanOption = styled.div`
     border: 1px solid hsl(231,11%,63%);
@@ -35,14 +35,14 @@ export const PlanOption = styled.div`
     @media (min-width: 426px) and (max-width: 850px){
         padding : 12px 16px 0 16px;
     }
-`
+`;
 
 export const PriceText = styled.div`
     padding: 0 0 0 0;
     color: #9699ab;
     margin-top:5px;
     margin-bottom:5px;
-`
+`;
 
 export const FreeText = styled.p`
     color: hsl(213, 96%, 18%);
@@ -51,7 +51,7 @@ export const FreeText = styled.p`
     @media (max-width: 850px) {
         margin-left: auto;
     }
-`
+`;
 
 export const TitleCard = styled.h3`
     margin-top: 32px;
@@ -59,7 +59,7 @@ export const TitleCard = styled.h3`
     @media (max-width: 850px) {
         margin-top: 0;
     }
-`
+`;
 
 export const OptionWrapper = styled.div`
     display: flex;
@@ -74,7 +74,7 @@ export const OptionWrapper = styled.div`
     @media (max-width: 425px) {
         margin-bottom:0;
     }
-`
+`;
 
 export const SelectText = styled.p`
     padding:16px 20px;
@@ -82,7 +82,7 @@ export const SelectText = styled.p`
     &.select {
         color: hsl(213, 96%, 18%);
     }
-`
+`;
 
 export const ToggleWrapper = styled.label`
     width: 54px;
@@ -93,7 +93,7 @@ export const ToggleWrapper = styled.label`
     align-items: center;
     position: relative;
     display: inline-block;
-`
+`;
 
 export const ToggleBtn = styled.input`
     width: 0;
@@ -102,7 +102,7 @@ export const ToggleBtn = styled.input`
     &:checked + .sliderBtn:before{
         transform: translateX(26px);
     }
-`
+`;
 
 export const SliderBtn = styled.span`
     position: absolute;
@@ -125,7 +125,7 @@ export const SliderBtn = styled.span`
         border-radius: 50%;
     }
    
-`
+`;
 
 export const MobileWrapper = styled.div`
     @media (max-width: 850px) {
@@ -133,7 +133,7 @@ export const MobileWrapper = styled.div`
         flex-direction: column;
         padding-left: 18px;
     }
-`
+`;
 
 export const MobileTextWrapper = styled.div`
     @media (max-width: 425px) {
@@ -141,4 +141,4 @@ export const MobileTextWrapper = styled.div`
         flex-direction: row;
         width:214px;
     }
-`
+`;
